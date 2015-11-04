@@ -105,9 +105,9 @@ EXAMPLES = '''
 tasks:
 - name: launch ansible cloudformation example
   cloudformation:
-    stack_name: "ansible-cloudformation" 
+    stack_name: "ansible-cloudformation"
     state: "present"
-    region: "us-east-1" 
+    region: "us-east-1"
     disable_rollback: true
     template: "files/cloudformation-example.json"
     template_parameters:
@@ -124,6 +124,7 @@ import time
 
 try:
     import boto
+    import boto.ec2
     import boto.cloudformation.connection
     HAS_BOTO = True
 except ImportError:
